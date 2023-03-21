@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ProductList from './components/ProductList.vue';
+</script>
 
 <template>
-  <div>Hello</div>
+  <ProductList />
 </template>

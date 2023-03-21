@@ -2,10 +2,16 @@
 import { onMounted, ref } from 'vue'
 import { getProducts } from '../api/shop'
 
-const products = ref([])
+const products: any = ref([])
 onMounted(() => {
     getProducts((data: any) => (products.value = data))
 })
 </script>
 
-<template></template>
+<template>
+    <ul>
+        <li v-for="product in products" v-bind:key="product.id">
+            {{ product.title }} - ¥{{ product.price.toLocaleString() }}
+        </li>
+    </ul>
+</template>
